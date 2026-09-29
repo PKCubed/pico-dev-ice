@@ -42,6 +42,7 @@ Once you understand the hardware, it is time to turn it on. We will use the Pico
 3. **The Smoke Test:** Gently touch the top of the LDO voltage regulators and the FPGA. If any component is burning hot to the touch, unplug the board immediately and alert the instructor.  If a USB ammeter is available, use it and disconnect if you are drawing too much current.
 4. Check the power rails and make sure you have the correct voltage using the test points.
 5. Check the master clock with an oscilloscope.
+6. Once your board gets this far you might want to solder up your YD-RP2040 and the BNC connectors for your antenna and AWG output.
 
 ### Step 2: MicroPython Setup
 1. Open your IDE (e.g., Thonny or VS Code with MicroPython extensions). 
