@@ -27,7 +27,7 @@ Follow the RF signal path from the `SDR_ANT` SMA connector to the MS9280 ADC.
 
 ### 3. Digital Control & Clocking
 *   **The Clock:** Find the 30.72 MHz CMOS Oscillator. Why is there a 22 Ω resistor (`R34`) placed in series with the clock output trace before it reaches the FPGA?
-*   **The SPI CRAM Paradox:** Look at the SPI0 bus connecting the Pico to the FPGA. The Pico's `SPI0_TX` (MOSI) pin is connected to a net named `ICE_SO` (Slave Out). Why is the Pico's Transmit pin connected to the FPGA's Output net? *(Hint: Think about what happens when the Pico writes to the FPGA's CRAM during boot).*
+*   **The SPI CRAM Paradox:** Explain how the SPI0 is used for both CRAM loading and for control data when the SDR is running. Is R33 placed correctly on the PCB? *What IC is master and what IC is slave in both boot and run modes?  (Hint: Think about what happens when the Pico writes to the FPGA's CRAM during boot and what happens after boot.)*
 *   **The OTR Pin:** The ADC's Out-of-Range (`OTR`) pin pulses high when the analog signal clips. Why is this pin routed to the FPGA instead of directly to a Pico GPIO pin? 
 
 ---
@@ -39,7 +39,7 @@ Once you understand the hardware, it is time to turn it on. We will use the Pico
 ### Step 1: The Visual & Smoke Test
 1. Do not plug the board in yet. Visually inspect your PCB for solder bridges, particularly around the pins of the iCE40UP5K and the Pico socket.
 2. Plug a USB cable into the Pico. 
-3. **The Smoke Test:** Gently touch the top of the LDO voltage regulators and the FPGA. If any component is burning hot to the touch, unplug the board immediately and alert the instructor.
+3. **The Smoke Test:** Gently touch the top of the LDO voltage regulators and the FPGA. If any component is burning hot to the touch, unplug the board immediately and alert the instructor.  If a USB ammeter is available, use it and disconnect if you are drawing too much current.
 
 ### Step 2: MicroPython Setup
 1. Open your IDE (e.g., Thonny or VS Code with MicroPython extensions). 
