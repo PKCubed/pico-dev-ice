@@ -46,12 +46,12 @@ Once you understand the hardware, it is time to turn it on. We will use the Pico
 ### Step 2: MicroPython Setup
 1. Open your IDE (e.g., Thonny or VS Code with MicroPython extensions). 
 2. Ensure the Pico is flashed with the standard MicroPython UF2 firmware.
-3. Install the provided `ice.py` library to your Pico's filesystem. This library contains the routines necessary to reset the FPGA and blast a bitstream into its CRAM over the SPI0 bus.
+3. Install the provided `ice.py` library to your Pico's filesystem. This library contains the routines necessary to reset the FPGA and blast a bitstream into its CRAM over the SPI0 bus.  The MicroPython uf2 is in the Software directory.
 
 ### Step 3: The "Hello World" Bitstream
 We need to prove the FPGA is alive, the 30.72 MHz clock is running, and the Pico can successfully program it. 
 
-You are provided with a tiny pre-compiled bitstream (`led_test.bin`). This bitstream contains a simple hardware module that turns on the Green LED (Pin 41), turns off the Red and Yellow LEDs (Pins 39 and 40), and asserts `CDONE`. 
+You are provided with a tiny pre-compiled bitstream (`led_test.bin`) in the main pico-dev-ice repo. This bitstream contains a simple hardware module that turns on the Green LED (Pin 41), turns off the Red and Yellow LEDs (Pins 39 and 40), and asserts `CDONE`. 
 
 *(Hardware Note: The RGB LED pins on the iCE40UP5K are Open-Drain. They sink current to Ground to turn the LED on. To turn the LED off, the pin must be set to High-Impedance/1).*
 
